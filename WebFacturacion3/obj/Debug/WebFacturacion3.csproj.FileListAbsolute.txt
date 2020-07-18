@@ -1,0 +1,2 @@
+C:\Users\xerox\OneDrive\Documentos\GitHub\WebFacProp3\WebFacturacion3\obj\Debug\WebFacturacion3.csprojAssemblyReference.cache
+C:\Users\xerox\OneDrive\Documentos\GitHub\WebFacProp3\WebFacturacion3\obj\Debug\WebFacturacion3.csproj.CoreCompileInputs.cache

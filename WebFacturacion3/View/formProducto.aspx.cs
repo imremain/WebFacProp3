@@ -22,7 +22,7 @@ namespace WebFacturacion3.View
 
                 prod.DescripcionProducto = txtDescripcion.Text;
                 prod.PrecioProd = Convert.ToDouble(txtPrecio.Text);
-                prod.FechaCaducidadProd = calendar.SelectedDate;
+                prod.FechaCaducidadProd = Convert.ToDateTime(txtCad.Text);
                 prod.CodigoBarras_Prod = txtCodigoBarras.Text;
                 prod.Proveedor_Prod = txtProveedor.Text;
 
@@ -90,7 +90,7 @@ namespace WebFacturacion3.View
             txtPrecio.Text         = Convert.ToString(Precio);
             txtCodigoBarras.Text   = CodigoBarras;
             txtProveedor.Text      = Proveedor;
-            calendar.SelectedDate  = FechaCaducidadProd;
+            CalendarExtender1.SelectedDate = FechaCaducidadProd;
 
             btnIngresar.Enabled = false;
         }
@@ -108,7 +108,7 @@ namespace WebFacturacion3.View
                 prod.PrecioProd = Convert.ToDouble(txtPrecio.Text);
                 prod.CodigoBarras_Prod = txtCodigoBarras.Text;
                 prod.Proveedor_Prod = txtProveedor.Text;
-                prod.FechaCaducidadProd = calendar.SelectedDate;
+                prod.FechaCaducidadProd = Convert.ToDateTime(txtCad.Text);
 
                 agregar = ProductoDA.ActualizaProducto(prod);
 

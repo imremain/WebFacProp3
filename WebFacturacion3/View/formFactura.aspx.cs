@@ -17,34 +17,47 @@ namespace WebFacturacion3.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Selecciona();
             Int32? idCliente = null;
             String nombre = String.Empty;
             String rfc = String.Empty;
-            Int32? idProducto = null;
+           /* Int32? idProducto = null; */
 
             dropDownClientes.DataSource = ClienteDA.SeleccionaClientes(idCliente, nombre, rfc);
             dropDownClientes.DataTextField = "Nombre";
             dropDownClientes.DataValueField = "id_Cliente";
             dropDownClientes.DataBind();
-
+            /*
             DropDownList1.DataSource = ProductoDA.SeleccionaProductos(idProducto);
             DropDownList1.DataTextField = "DescripcionProducto";
             DropDownList1.DataValueField = "id_Producto";
             DropDownList1.DataBind();
+            */
         }
 
+        /*
         public void Selecciona(Int32? idDetalle) {            
             GridViewDetalleFactura.DataSource = DetalleFacturaDA.SeleccionaDetalleFactura(idDetalle);
             GridViewDetalleFactura.DataBind();
         }
+        */
         
         public void dropDownClientes_SelectedIndexChanged(object sender, EventArgs e)
         {                      
         }
 
+        void Selecciona()
+        {
+            Int32 Folio_Cte = 0;
+
+            GVFactura.DataSource = FacturaDA.SeleccionaFacturas(Folio_Cte);
+            GVFactura.DataBind();
+        }
+
+
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            GenerarFactura();   
+            GenerarFactura();
         }
 
         public Int32 GenerarFactura()
@@ -53,20 +66,21 @@ namespace WebFacturacion3.View
 
             Factura fact    = new Factura();
             fact.Id_cte     = Convert.ToInt32(dropDownClientes.SelectedValue);
-            fact.Fecha_Fact = fechaFactura.SelectedDate;
             fact.Total_Fact = 0;
+            fact.Fecha_Fact = Convert.ToDateTime(txtDate.Text);
 
             guardarFactura = FacturaDA.InsertarFactura(fact);
 
             if (guardarFactura != 0) { 
                 txtFolio.Text = guardarFactura.ToString();
                 btnGuardar.Enabled = false;
-                btnAgregarDetalle.Enabled = true;
+                /* btnAgregarDetalle.Enabled = true; */
             }
 
             return facturaSeleccionada;
         }
 
+        /*
         protected void btnAgregarDetalle_Click(object sender, EventArgs e)
         {
             try
@@ -105,5 +119,6 @@ namespace WebFacturacion3.View
             txtSubtotal.Text = subtotal.ToString();
 
         }
+        */
     }
 }

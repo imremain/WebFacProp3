@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <link rel="stylesheet" type="text/css" href="../Content/bootstrap.min.css" />
     <link href="../Content/fonts/fontawesome-all.min.css" rel="stylesheet" />
@@ -123,7 +124,7 @@
                                                             <asp:Label ID="Label7" runat="server" Text="Fecha Nacimiento:"></asp:Label>
                                                             <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
                                                             <asp:TextBox ID="txtBox" runat="server" autocomplete="off" CssClass="form-control" />
-                                                            <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtBox" Format="MM/dd/yyyy" />
+                                                            <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtBox"/>
                                                         </div>
                                                     </div>
                                                 </div>

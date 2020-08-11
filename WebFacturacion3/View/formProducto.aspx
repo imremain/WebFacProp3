@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="formProducto.aspx.cs" Inherits="WebFacturacion3.View.formProducto" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -94,7 +96,9 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <asp:Label ID="Label7" runat="server" Text="Fecha Caducidad:"></asp:Label>
-                                                    <asp:Calendar ID="calendar" runat="server"></asp:Calendar>
+                                                    <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
+                                                    <asp:TextBox ID="txtCad" runat="server" autocomplete="off" CssClass="form-control" />
+                                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtCad"/>
                                                 </div>
                                                 <div class="form-group">
                         

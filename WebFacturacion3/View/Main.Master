@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="WebFacturacion3.View.Main" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <script src="../Scripts/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../Content/bootstrap.min.css"/>
+        <link href="../Content/style.css" rel="stylesheet"/>
+        <link href="../Content/fonts/fontawesome-all.min.css" rel="stylesheet"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </asp:ContentPlaceHolder>
+<body id="page-top">
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+            <script>
+
+            $("#btnSample").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "formFactura.aspx/SeleccionCliente",
+                    data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (msg) {
+                        console.log(msg);
+                        // Do something interesting here.
+                    }
+                });
+            });
+            </script>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+        <script src="../Scripts/bootstrap.min.js"></script>
+        <script src="../Scripts/jquery.min.js"></script>
+        <script src="../Scripts/jquery.js"></script>
+        <script src="../Scripts/chart.min.js"></script>
+        <script src="../Scripts/bs-init.js"></script>
+        <script src="../Scripts/theme.js"></script>
+</body>
+</html>
